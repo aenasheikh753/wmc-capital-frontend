@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-custom-bg: #f8f8f9;
+  --color-custom-bg-subtle: #ebeef6;
+  --color-custom-bg-elevated: #e3e5eb;
+  --color-custom-text-main: #e5e7eb;
+  --color-custom-text-muted: #9ca3af;
+  --color-custom-brand: #111827;
+  --color-custom-accent: #f59e0b;
+}
