@@ -1,14 +1,10 @@
 import type { ReactNode } from "react";
-import { WebsiteNavbar } from "./components/layout/Navbar";
-import { WebsiteFooter } from "./components/layout/Footer";
+
+// Segment layout for (website) group.
+// Root layout already renders the global navbar and footer,
+// so this layout just provides a wrapper for page content.
 
 export default function WebsiteLayout({ children }: { children: ReactNode }) {
-  return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100">
-      <WebsiteNavbar />
-      <div className="flex-1">{children}</div>
-      <WebsiteFooter />
-    </div>
-  );
+  return <div className="min-h-screen bg-background text-slate-900">{children}</div>;
 }
 

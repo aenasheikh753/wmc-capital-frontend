@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className="bg-background text-slate-900">
         <div className="min-h-screen flex flex-col bg-background">
           <WebsiteNavbar />
-          <div className="flex-1">{children}</div>
+          <div className="flex-1 pt-16">{children}</div>
           <WebsiteFooter />
         </div>
       </body>
