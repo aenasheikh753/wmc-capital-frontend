@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function WebsiteNavbar() {
   return (
     <header className="border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <a href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/wmc-logo.png"
             alt="WMC Capital Group"
@@ -13,7 +14,7 @@ export function WebsiteNavbar() {
             priority
             className="h-7 w-auto sm:h-8"
           />
-        </a>
+        </Link>
         <nav className="hidden items-center gap-6 text-xs font-medium text-slate-600 md:flex">
           <a
             href="#programs"
