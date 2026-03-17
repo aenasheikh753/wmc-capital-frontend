@@ -23,18 +23,41 @@ export default function ClientReviewsPage() {
   return (
     <main className="bg-background text-slate-900">
       <section className="border-b border-slate-200 bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-parrot">
             Client Reviews
           </p>
-          <h1 className="mt-3 text-3xl font-semibold text-brand sm:text-4xl">
+          <div className="mt-5 grid gap-8 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:items-center">
+            <div>
+              <h1 className="text-3xl font-semibold text-brand sm:text-4xl">
             What investors, borrowers, and partners say about WMC Capital Group.
-          </h1>
-          <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+              </h1>
+              <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
             WMC Capital Group has helped clients close complex and time‑sensitive
             transactions after traditional lenders stepped away. Here’s what some of them
             have shared about working with our team.
-          </p>
+              </p>
+            </div>
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-neutral-light">
+              <div
+                className="absolute inset-0 opacity-70"
+                style={{
+                  backgroundImage: "url('/images/investment-pattern.svg')",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center"
+                }}
+              />
+              <div className="relative p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-600">
+                  Trusted by investors
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-700">
+                  Our focus is clarity, speed, and confidence—especially when timelines are
+                  tight and traditional banks are slow.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -54,6 +77,41 @@ export default function ClientReviewsPage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-white py-14 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="rounded-2xl border border-slate-200 bg-neutral-light p-6 sm:p-8">
+            <div className="grid gap-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] md:items-center">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-parrot">
+                  Ready to move?
+                </p>
+                <h2 className="mt-3 text-2xl font-semibold text-brand sm:text-3xl">
+                  Let’s review your scenario.
+                </h2>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+                  Share your property type, loan amount, and timeline. We’ll respond with
+                  next steps and the best-fit program.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-slate-300 transition hover:bg-brand-light"
+                >
+                  Contact WMC Capital Group
+                </a>
+                <a
+                  href="/programs"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-brand shadow-sm shadow-slate-200 transition hover:bg-slate-50"
+                >
+                  Explore programs
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
