@@ -60,7 +60,7 @@ export default function MultiUnitLoansPage() {
               className="h-36 w-full bg-cover bg-center"
               style={{
                 backgroundImage:
-                  "linear-gradient(to right, rgba(36,47,102,0.10), rgba(124,217,146,0.10)), url('/images/house-bg.jpg')"
+                  "linear-gradient(to right, rgba(36,47,102,0.10), rgba(124,217,146,0.10)), url('/images/building1.webp')"
               }}
             />
             <div className="p-5 sm:p-6">

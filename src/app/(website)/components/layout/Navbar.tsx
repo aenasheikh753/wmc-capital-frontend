@@ -1,12 +1,21 @@
  "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export function WebsiteNavbar() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileProgramsOpen, setMobileProgramsOpen] = useState(true);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(true);
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname === href || pathname.startsWith(href + "/");
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
@@ -26,20 +35,30 @@ export function WebsiteNavbar() {
         <nav className="hidden items-center gap-6 text-sm font-medium text-slate-600 lg:flex">
           <Link
             href="/"
-            className="border-b-2 border-transparent pb-0.5 hover:border-parrot hover:text-parrot"
+            className={`border-b-2 pb-0.5 transition ${
+              isActive("/") ? "border-parrot text-parrot" : "border-transparent hover:border-parrot hover:text-parrot"
+            }`}
           >
             Home
           </Link>
 
           <Link
             href="/about"
-            className="border-b-2 border-transparent pb-0.5 hover:border-parrot hover:text-parrot"
+            className={`border-b-2 pb-0.5 transition ${
+              isActive("/about")
+                ? "border-parrot text-parrot"
+                : "border-transparent hover:border-parrot hover:text-parrot"
+            }`}
           >
             About
           </Link>
 
           <div className="relative group">
-            <button className="flex items-center gap-1 border-b-2 border-transparent pb-0.5 text-slate-600 transition group-hover:border-parrot group-hover:text-parrot">
+            <button
+              className={`flex items-center gap-1 border-b-2 pb-0.5 text-slate-600 transition group-hover:border-parrot group-hover:text-parrot ${
+                pathname.startsWith("/programs") ? "border-parrot text-parrot" : "border-transparent"
+              }`}
+            >
               Programs
               <span className="text-[9px]">▾</span>
             </button>
@@ -85,7 +104,13 @@ export function WebsiteNavbar() {
           </div>
 
           <div className="relative group">
-            <button className="flex items-center gap-1 border-b-2 border-transparent pb-0.5 text-slate-600 transition group-hover:border-parrot group-hover:text-parrot">
+            <button
+              className={`flex items-center gap-1 border-b-2 pb-0.5 text-slate-600 transition group-hover:border-parrot group-hover:text-parrot ${
+                pathname.startsWith("/resources") || pathname.startsWith("/blog")
+                  ? "border-parrot text-parrot"
+                  : "border-transparent"
+              }`}
+            >
               Resources
               <span className="text-[9px]">▾</span>
             </button>
@@ -119,7 +144,11 @@ export function WebsiteNavbar() {
 
           <Link
             href="/contact"
-            className="border-b-2 border-transparent pb-0.5 hover:border-parrot hover:text-parrot"
+            className={`border-b-2 pb-0.5 transition ${
+              isActive("/contact")
+                ? "border-parrot text-parrot"
+                : "border-transparent hover:border-parrot hover:text-parrot"
+            }`}
           >
             Contact
           </Link>

@@ -74,11 +74,10 @@ export default function ProgramsPage() {
 
             <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-neutral-light">
               <div
-                className="absolute inset-0 opacity-70"
+                className="absolute inset-0 bg-cover bg-center opacity-90"
                 style={{
-                  backgroundImage: "url('/images/investment-pattern.svg')",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center"
+                  backgroundImage:
+                    "linear-gradient(to right, rgba(36,47,102,0.35), rgba(124,217,146,0.15)), url('/images/building1.webp')"
                 }}
               />
               <div className="relative p-6">
